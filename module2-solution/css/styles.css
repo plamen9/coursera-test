@@ -49,6 +49,8 @@ p {
 /* Simple Responsive Framework. */
 .row {
   width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 /********** Large devices only (desktops) **********/
 @media (min-width: 992px) {
