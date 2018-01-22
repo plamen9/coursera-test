@@ -1,27 +1,95 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Module 2 Responsive Layout</title>
-<link rel="stylesheet" href="css/styles.css">
-</head>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Module 3 Submission</title>
+    <link rel="stylesheet" href="Restaurant_module3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Restaurant_module3/css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave" rel="stylesheet">
+  </head>
 <body>
-<h1>Our menu</h1>
 
-<div class="row">
-  <div class="large-4 medium-6 small-12">
-    <div class="section_title custom_title_1">Adobo</div>  
-    <p>Adobo - No list of Filipino food would be complete without adobo.A ubiquitous dish in every household in the Philippines, it's Mexican in origin.But Filipinos found that cooking meat (often chicken and pork) in vinegar, salt, garlic, pepper, soy sauce and other spices was a practical way to preserve it without refrigeration.This cooking style can be applied to different meats or even seafood.It's best sample it in a Filipino home, but the garlicky version of the lamb adobo can be found at Abe restaurant in Taguig.Abe Serendra, Serendra Plaza Serendra Plaza, Taguig City, Luzon Philippines.</p>
-  </div>
-  <div class="large-4 medium-6 small-12">
-    <div class="section_title custom_title_2">Lechon</div>  
-    <p>Lechon - The lechon is the most invited party guest in the Philippines.The entire pig is spit-roasted over coals, with the crisp, golden-brown skin served with liver sauce, the most coveted part.In Cebu, the stomach of the pig is stuffed with star anise, pepper, spring onions, laurel leaves and lemongrass resulting in an extremely tasty lechon, which needs no sauce.In Manila, folks can get their piggy from Elar's Lechon, while in Cebu, the best is CnT Lechon.</p></div>
-  <div class="large-4 medium-12 small-12">
-    <div class="section_title custom_title_3">Sisig</div>  
-    <p>Sisig - Nothing goes to waste in Filipino food.In the culinary capital of Pampanga, they turn the pork's cheeks, head and liver into a sizzling dish called Sisig.The crunchy and chewy texture of this appetizer is a perfect match for a cold beer.Serve with hot sauce and Knorr seasoning to suit the preference of you and your buddies.Credit goes to Aling Lucing, who invented this dish at a humble stall along the train railways in Angeles City, Pampanga.While Sisig can be found in many restaurants, try the original version at Aling Lucing Sisig.Aling Lucing Sisig, Adjacent to Abacan Bridge Henson Street, Angeles City, Luzon Philippines.</p>
-  </div>
-</div>
+  <header>
+    <nav id="header-nav" class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
 
+          <div class="navbar-brand">
+            <a href="index.html"><h1>Coursera [Plamen Mushkov]</h1></a>
+          </div>
+
+       <!--     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+      <div class="visible-xs">
+	        <div id="collapsable-nav" class="collapse navbar-collapse">
+	           <ul id="nav-list" class="nav navbar-nav navbar-right">
+	            <li>
+	              <a href="#Adobo">Adobo</a>
+	            </li>
+	            <li>
+	              <a href="#Lechon">Lechon</a>
+	            </li>
+	            <li>
+	              <a href="#Sisig">Sisig</a>
+	            </li>
+	          </ul>
+	        </div>
+	    </div>    -->
+
+      </div><!-- .container -->
+    </nav><!-- #header-nav -->
+  </header>
+
+  <div id="main-content" class="container">
+
+  	<h2 class="center_title">Module submissions</h2>
+
+  	<div class="row">
+	  <div class="col-md-3 col-sm-6 col-xs-12">
+	  	<a href="#" class="thumbnail menu_item">
+	      <h3 class="center_title section_title">Module 1</h3>  
+	      <p class="card_number card_1">1</p>
+	    </a>   	
+	    	<!--<a href="#header-nav">Back To Top</a>-->
+	  </div>
+	  <div class="col-md-3 col-sm-6 col-xs-12">
+	  	<a href="../Docs/Module2_solution/" class="thumbnail menu_item">
+	    	<h3 class="center_title section_title">Module 2</h3> 
+	    	<p class="card_number card_2">2</p>
+	    	<!--<a href="#header-nav">Back To Top</a>-->
+	    </a>
+	  </div>	
+	  <div class="col-md-3 col-sm-6 col-xs-12">
+	  	<a href="../Docs/Restaurant_module3/" class="thumbnail menu_item">
+	    	<h3 class="center_title section_title">Module 3</h3> 
+	    	<p class="card_number card_3">3</p>
+	    	<!--<a href="#header-nav">Back To Top</a>-->
+	    </a>	
+	  </div>
+	  <div class="col-md-3 col-sm-6 col-xs-12">
+	  	<a href="#" class="thumbnail menu_item">
+	    	<h3 class="center_title section_title">Module 4</h3> 
+	    	<p class="card_number card_4">4</p>
+	    	<!--<a href="#header-nav">Back To Top</a>-->
+	    </a>	
+	  </div>
+	</div>
+
+  </div><!-- End of #main-content -->
+
+  <!-- jQuery (Bootstrap JS plugins depend on it) -->
+  <script src="Restaurant_module3/js/jquery-2.1.4.min.js"></script>
+  <script src="Restaurant_module3/js/bootstrap.min.js"></script>
+  <script src="Restaurant_module3/js/script.js"></script>
 </body>
 </html>
