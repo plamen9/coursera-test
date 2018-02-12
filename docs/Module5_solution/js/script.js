@@ -115,7 +115,11 @@ function buildAndShowHomeHTML (categories) {
       // Hint: you need to surround the chosen category short name with something before inserting
       // it into the home html snippet.
 
+<<<<<<< HEAD
     chosenCategoryShortName = "'" + chosenCategoryShortName + "'";
+=======
+	  chosenCategoryShortName = "'" + chosenCategoryShortName + "'";
+>>>>>>> ba8d92dde7dcee3b92da4ea1d5b518385a81a7de
 
       //
       // var homeHtmlToInsertIntoMainPage = ....

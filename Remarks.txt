@@ -1,0 +1,208 @@
+browser-sync start --server --directory --files "**/*"
+
+-- HTML
+	- Inline vs Block elements (prior to HTML 5)
+		Inline (<span>, etc...) continue on the same line and only takes up as much width as necessary.
+		Block (<div>, etc...) elements start on a new line and takes the full width.
+		
+		HTML5 elements:
+			Block : <address> <article> <aside> <blockquote> <canvas> <dd> <div> <dl> <dt>< fieldset> <figcaption> <figure> <footer>
+					<form> <h1>-<h6> <header> <hr> <li> <main> <nav> <noscript> <ol> <output> <p> <pre> <section> <table> <tfoot> <ul> <video>
+					
+			Inline: <a> <abbr> <acronym> <b> <bdo> <big> <br> <button> <cite> <code> <dfn> <em> <i> <img> <input> <kbd> <label>
+					<map> <object> <q> <samp> <script> <select> <small> <span> <strong> <sub> <sup> <textarea> <time> <tt> <var>		
+
+-- CSS
+	- Pseudo classes (https://www.w3schools.com/css/css_pseudo_classes.asp)
+		for ex.: a:link, a:visited, a:active, a:hover
+				 li:nth-child(3) div:nth-child(odd) div:nth-child(even) div:nth-child(4):hover
+				 
+				 
+-- HTML Box Model				 
+	- margin | border | padding | CONTENT | padding | border | margin
+	- body { margin: 0; padding: 0} - Reset those values if browser is having some default values
+	- width property does NOT include padding, margin and border ( width:300 + padding:2*20 + border:2*50 = total 440px)
+	- { box-sizing: border-box; } - makes width a sum of padding+border+width and if width is set to 300, it will include all values ( width:160 + padding:2*20 + border:2*50 = total 300px) (margin is not included)
+	- *{box-sizing: border-box;} - * applies the properties to every element on page
+	- margin-left/right is cumulative
+	- margin-top/bottom is not cumulative - bigger one is applied
+	- overflow: visible - allows text to spill out of div
+	- overflow: hidden - cuts text to the edge of div
+	- overflow: auto - adds scroller to the right of div
+	- overflow: scroll - adds scroller to the right and bottom of div
+	- background-image: url("someurl.png") 
+	- background: url("someurl.png") no-repeat right center   (background overrides all background properties like background-color, etc.) 
+	
+	- float - margins never collapse
+	- clear: left; - nothing should be floating on the left
+	- clear: both - if we have floating elements on both sides
+	
+	- { position: relative; top: 50px; left: 50px; } -> moves the element 50 px from top and 50px from left
+	- { position: absolute; top: 50px; left: 50px; } -> moves the element 50 px from top and 50px from left of element (needs a relative or absolute parent)
+	
+-- Media Queries
+	- @media (max-width: 800px) {...} -> If the max-width of the device is 800px, apply the styles inside the {}
+	- @media (min-width: 800px) {...} -> If the min-width of the device is 800px, apply the styles inside the {}
+	- @media (min-width: 750px) and (max-width: 990px) {...} -> If the min-width of the device is 750px AND max-width is 990px, apply the styles inside the {}
+	- @media (min-width: 750px) , (max-width: 990px) {...} -> If the min-width of the device is 750px OR max-width is 990px, apply the styles inside the {}
+	- @media (orientation: portrait) {...} -> If the orientation of the device is portrait, apply the styles inside the {}
+	
+	- Define Base styles, that are the base of the element and depending on device properties extend the styles applied with @media
+	- Devices usually divide into :
+		Large size devices - @media (min-width: 1200px)
+		Medium size devices - @media (min-width: 992px) and (max-width: 1199px)
+	- <meta name="viewport" content="width=device-width, initial-scale=1">	 -> tells the browser of the device not to zoom out in order to show everything. Enable it if creating mobile interface
+	
+	- 12 column grid layout (used in Bootstrap and APEX). Uses % to achieve fluid width
+	
+-- Bootstrap	
+	- Put bootstrap.css and custom css styles in the <head>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/styles.css">
+	- Put jquery.min.js inside the js folder of bootstrap (if missing) and include it in the bottom of <body>
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/script.js"></script>
+	- 12 column grid (col-lg-4, col-md-4, col-sm-4, col-xs-4, etc.  )
+	- 4 basic media queries used -> ls - Large (desktops), md - Medium (tablets), sm - Small (large mobiles), xs - Extra Small (small mobiles)
+	
+-- Javascript
+	-- Executes sequentially  
+	-- No types are defined. They are automatically detected (type coercion)
+    -- console.log(); 	-- write in the console
+	-- function a () {...}   =    var a = function () {...}		  
+	-- Execute function -> a();
+	-- function compare (x,y) { return x> y ; }  -> function with variables
+	-- All arguments are optional ; compare (4,5) is valid and compare () is also valid
+	-- 7 built-in types (6 primitive types + one collection of Objects)
+	-- Regular Equality ( == ) - automatically detects types and changes it // === if we want to use STRICT equality ( === ), replace == with === (will return false of '4' === 4 )
+	-- false || null || undefined || "" || 0 || NaN -> all are FALSE in an IF ELSE statement
+	-- Opening { should be on the same line!
+	
+	
+	PL/SQL vs Javascript 
+	
+	:= 			=				var str = "Hello"
+	||			+	+=				str += " World!"	(str = str + " World!"
+	=			==				(or === for strict equality)
+	OR			||	
+	AND 		&&
+				++ 				incremental operator
+				--				decremental operator
+	NVL()		a = a || "Default value";   -- returned instead of undefined			
+	
+	-- Loop
+		var sum = 0;
+		for (var i = 0; i < 10; i++) {
+			sum = sum + i;
+		}
+	-- Objects
+	
+		var company = new Object();			-- create new Object
+		company.name = "SomeCompanyName";	
+		
+		company.ceo = new Object();
+		company.ceo.firstName = "Mark";
+		company.ceo.favColor = "blue";
+		company["Stock price"] = 110;
+		
+		console.log(company);
+		console.log("Company CEO name is: " + company.ceo.firstName);
+		console.log(company["name"]);
+		console.log("Stock Price is: " + company.["Stock price"]);
+																	v1		
+		--------------------------------------------------------------
+		
+		var facebook = {
+			name: "Facebook",
+			ceo: {
+				firstName: "Mark",
+				favColor: "blue"
+			},
+			$stock: 110,
+			"Stock Price": 110
+			
+		};	
+																	v2
+		--------------------------------------------------------------
+		
+		-- Passing by Value - a = b , If b is changed, a is not affected
+		-- Passing by Reference - a = b, If b is changed, a is also changed
+		-- In Javascript, Primitives are passed by value, Objects are passed by reference
+		-- Primitives ; var a = 7; var b = a;  		-- If b is changed to 5, a is still 7
+		-- Objects: var a = {x: 7}; var b = a; 		-- If b is changed to 5 (b.x = 5;), a.x is now also 5
+		
+		-- Function constructors				-- no Return statement
+			function Circle (radius) {
+				this.radius = radius;
+			//	this.getArea = 					-- do not put get/set/etc methods inside the function. use the prototypes
+			//		function () {
+			//			return Math.PI * Math.pow(this.radius, 2);
+			//		};
+			)
+			
+			Circle.prototype.getArea = 								-- create get method like that to avoid putting the function in every Circle, but only once in __proto__
+				function () {
+					return Math.PI * Math.pow(this.radius, 2);
+				}
+					
+			var myCircle = new Circle(10);	// new Object()
+			console.log(myCircle);
+			console.log(myCircle.getArea());
+			-----------------------------------------------------------
+			var literalCircle = {		// new Object
+				radius: 10,
+				
+				getArea: function () {
+					var self = this;		-- used to point to exactly this function, otherwise this points to the global object 
+					var increaseRadius = function () {
+						self.radius = 20;
+					};	
+					
+					increaseRadius();
+					return Math.PI * Math.pow(this.radius, 2); 
+				}
+			};
+			
+			console.log(literalCircle.getArea());
+			
+	-- Arrays
+		-- Arrays are just Objects !
+	
+		var names = ["Plamen", "Petar", "John"];
+		
+		for (var name in names) {
+			console.log("Hello " + names[name]);
+		}
+		
+		//////////////////////////////////////////
+		
+		var myObj = {
+			name: "Plamen",
+			course: "HTML/CSS/JS",
+			platform: "Coursera"
+		};
+		
+		for (var prop in myObj) {				// loops through the entire object
+			console.log(prop + ": " + myObj[prop]);
+		}
+		
+		
+	-- Namespaces
+		 var plamenGreeter = {};
+		 plamenGreeter.name = "Plamen";
+		   
+		 var johnGreeter = {};
+		 johnGreeter.name = "John";
+		
+		 plamenGreeter.sayHello();
+		 johnGreeter.sayHi();
+		 
+		 
+	-- AJAX and JSON
+		-- JSON is just a string. To turn it into a Javascript object, you need to parse it.
+		// convert JSON to Javascript object
+		var obj = JSON.parse(jsonString);
+		// convert Javascript object to JSON
+		var str = JSON.stringify(obj);
+ 		

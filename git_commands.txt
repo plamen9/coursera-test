@@ -1,0 +1,10 @@
+git config --global user.name "Plamen"									-- configure your Github.org username to be used with the local repository (step1)
+git config --global user.email vanBasten09@abv.bg						-- configure your Github.org username to be used with the local repository (step2)
+git config --global http.sslVerify false								-- configure it if you don't have a local certificate and can't push to the Git repo
+git clone https://url-of-your-repo										-- clone your repository locally
+git clone -b gh-pages https://github.com/vanBasten/coursera-test.git 	-- optionally clone of a branch
+git status																-- check the status of your Git repository
+git add .																-- adds all new files/folders to the Git repository
+git add git_commands.txt												-- optionally add/change specific file
+git commit -m "Comments here" 											-- commit the added files and add a comment (so far it is commited locally)
+git push																-- Push the commited changes to the online Git repository
